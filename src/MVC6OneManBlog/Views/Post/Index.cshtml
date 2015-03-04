@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Home Page";
+}
+<html>
+<head>
+    <title>
+        @ViewBag.Title
+    </title>
+    <link href="/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1>@Model.Slug</h1>
+        <div>@Model.Content</div>
+    </div>
+    <script src="/lib/jquery/jquery.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
