@@ -1,6 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@inject MVC6OneManBlog.Controllers.Data Data
+
 @{
     ViewBag.Title = "Home Page";
 }
@@ -31,6 +30,12 @@
             <input type="submit" value="Save" class="btn btn-default" />
         }
     </div>
+    <ul>
+        @foreach (var item in Data.GetPosts())
+        {
+            <li>@Html.ActionLink(item.Slug, "Index", "Post", new { id = item.Slug })</li>
+        }
+    </ul>
     <script src="/lib/jquery/jquery.js"></script>
     <script src="/lib/bootstrap/js/bootstrap.js"></script>
 </body>

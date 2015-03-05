@@ -10,14 +10,19 @@ namespace MVC6OneManBlog.Controllers
     {
         private Dictionary<string, PostModel> _posts = new Dictionary<string, PostModel>();
 
-        internal void Add(PostModel post)
+        public void Add(PostModel post)
         {
             _posts.Add(post.Slug, post);
         }
 
-        internal PostModel Get(string id)
+        public PostModel Get(string id)
         {
             return _posts[id];
+        }
+
+        public IEnumerable<PostModel> GetPosts()
+        {
+            return _posts.Values;
         }
     }
 
