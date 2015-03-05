@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MVC6OneManBlog.Controllers.PostModel>
+<div>
+    <h3>Blog posts</h3>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.Slug, "Index", "Post", new { id = item.Slug })</li>
+        }
+    </ul>
+</div>

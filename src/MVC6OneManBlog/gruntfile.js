@@ -1,4 +1,4 @@
-/// <binding AfterBuild='bower' />
+/// <binding AfterBuild='bower, less' />
 module.exports = function (grunt) {
     grunt.initConfig({
         bower: {

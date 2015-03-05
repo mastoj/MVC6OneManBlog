@@ -29,13 +29,8 @@
             </div>
             <input type="submit" value="Save" class="btn btn-default" />
         }
+        @Component.Invoke("PostList")
     </div>
-    <ul>
-        @foreach (var item in Data.GetPosts())
-        {
-            <li>@Html.ActionLink(item.Slug, "Index", "Post", new { id = item.Slug })</li>
-        }
-    </ul>
     <script src="/lib/jquery/jquery.js"></script>
     <script src="/lib/bootstrap/js/bootstrap.js"></script>
 </body>

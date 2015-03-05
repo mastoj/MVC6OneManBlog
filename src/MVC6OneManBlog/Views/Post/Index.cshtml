@@ -16,6 +16,7 @@
     <div class="container">
         <h1>@Model.Slug</h1>
         <div>@Model.Content</div>
+        @Component.Invoke("PostList")
     </div>
     <script src="/lib/jquery/jquery.js"></script>
     <script src="/lib/bootstrap/js/bootstrap.js"></script>
