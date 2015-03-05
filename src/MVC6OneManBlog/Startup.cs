@@ -19,7 +19,7 @@ namespace MVC6OneManBlog
             //app.UseWelcomePage();
             //            app.UseErrorHandler("/Home/Error");
             app.UseBrowserLink();
-
+            app.UseStaticFiles();
             app.UseMvc(routeBuilder =>
             {
                 routeBuilder.MapRoute(

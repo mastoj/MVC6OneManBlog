@@ -5,11 +5,16 @@
         "Microsoft.AspNet.Server.IIS": "1.0.0-beta3",
         "Microsoft.AspNet.Mvc": "6.0.0-beta3",
         "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta3",
-        "Microsoft.AspNet.Diagnostics": "1.0.0-beta3"
+        "Microsoft.AspNet.Diagnostics": "1.0.0-beta3",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta3",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-beta3"
     },
     "frameworks": {
         "aspnet50": { },
         "aspnetcore50": { }
+    },
+    "commands": {
+        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5001"
     },
     "bundleExclude": [
         "node_modules",
