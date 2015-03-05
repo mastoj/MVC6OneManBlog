@@ -6,16 +6,16 @@ using System.Collections.Generic;
 
 namespace MVC6OneManBlog.Controllers
 {
-    public static class Data
+    public class Data
     {
-        private static Dictionary<string, PostModel> _posts = new Dictionary<string, PostModel>();
+        private Dictionary<string, PostModel> _posts = new Dictionary<string, PostModel>();
 
-        internal static void Add(PostModel post)
+        internal void Add(PostModel post)
         {
             _posts.Add(post.Slug, post);
         }
 
-        internal static PostModel Get(string id)
+        internal PostModel Get(string id)
         {
             return _posts[id];
         }
@@ -29,6 +29,12 @@ namespace MVC6OneManBlog.Controllers
 
     public class HomeController : Controller
     {
+        private Data _data;
+
+        public HomeController(Data data)
+        {
+            _data = data;
+        }
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -37,13 +43,16 @@ namespace MVC6OneManBlog.Controllers
 
         public IActionResult Create(PostModel post)
         {
-            Data.Add(post);
+            _data.Add(post);
             return RedirectToAction("Index", "Post", new { id = post.Slug });
         }
     }
 
     public class PostController : Controller
     {
+        [Activate]
+        public Data Data { get; set; }
+
         public IActionResult Index(string id)
         {
             return View(Data.Get(id));
