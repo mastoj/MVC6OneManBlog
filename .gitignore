@@ -119,3 +119,4 @@ _configs/
 # vnext stuff
 wwwroot
 bower_components
+output
